@@ -1,54 +1,36 @@
-# Medify - Medical Center Slot Booking Platform
+# MEDIFY - Medical Center Slot Booking Platform
 
-## Overview
 
-Medify is a React-based frontend of a web application designed to help users find medical centers in various states and cities across the USA and book appointments seamlessly.
+## Assignment Objective
+
+### The objective of this assignment is to build a React-based web application that allows users to find medical centers in a specific state and city across the USA and book appointments.
 
 ## Key Features
 
-### Landing Page
+### Landing Page:
+A top navigation bar with access to platform sections such as Find Doctors, Hospitals, Medicines, and more.
 
-- **Navigation Bar**: Access sections such as Find Doctors, Hospitals, Medicines, etc.
-- **Search Section**: Users can select a state and city from dropdown menus, fetching options from an API to list available medical centers.
+A search section for users to select a state and city, leading to a list of available medical centers in the chosen area.
 
-### Search Results Page
+Both State and City should have a dropdown where the options will be fetched from an api which is provided in the problem description.
 
-- **Listings View**: Displays available medical centers in the selected location.
-- **Booking Option**: Users can book slots for the chosen medical center.
+And other sections as provided in the figma design.
 
-### Booking Interface
+### Search Results Page:
+A listings view showing available medical centers in the selected location with the option to book appointments.
 
-- **Detailed Booking Section**: Select a medical center and choose the appointment date and time
-- **Appointment Scheduling**: Book appointments up to one week in advance with available time slots.
 
-### My Bookings Page
+### Booking Interface:
+A detailed booking section for users to select a medical center, with a calendar-like interface to choose an appointment date.
+The ability to book an appointment within a time frame from today up to one week in advance.
+A selection of available time slots for the selected day.
 
-- **Personalized Bookings**: Displays all user bookings, including the medical center's name, appointment date, and time.
+### My Bookings Page:
+A personalized page displaying all user bookings, including details such as the medical center's name, appointment date, and time.
 
-### Responsive Design
 
-- **Full Responsiveness**: Ensures the application works well on various devices and screen sizes.
-- **Carousels**: Utilizes the Slick library to implement mandatory carousels.
+### Responsive Design:
+The application is fully responsive and adheres to the design standards presented in the Figma screenshots.
 
-## API Endpoints
+### [Figma link](https://www.figma.com/file/BLZw4DOia4hXyqt8X1Yuyl/Desktop-Designs-%3A-Healthcare-Consultation-(Community)?type=design&node-id=0-1&mode=design&t=VgPv59eyp8F6dTev-0)
 
-- **Get All States**: `https://meddata-backend.onrender.com/states`
-- **Get All Cities of a State**: `https://meddata-backend.onrender.com/cities/:state`
-- **Get Medical Centers Based on State and City**: `https://meddata-backend.onrender.com/data?state=<state-name>&city=<city-name>`
-
-## Deployment
-
-The application is deployed on Vercel. [Live Demo](https://medify-coral.vercel.app/)
-
-## Local Setup
-
-1. **Clone the Repository**: `git clone https://https://github.com/RajeshSwain7/Medify.git && cd Medify`
-2. **Install Dependencies**: `npm install`
-3. **Start the Application**: `npm run dev`
-
-## Technologies Used
-
-- **React**: Front-end framework
-- **Slick**: For implementing carousels
-- **Axios**: For API calls
-- **LocalStorage**: To persist data
