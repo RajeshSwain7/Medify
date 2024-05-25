@@ -1,84 +1,76 @@
-.footer
-{
-    padding: 12.5vw;
-    padding-top: 10vh;
-    padding-bottom: 0;
-    background-color: var(--secondary-color);
-    color: white;
-}
-
-.upperfooter
-{
-    font-size: 16px;
-    font-weight: 400;
+.heading {
     display: flex;
-    justify-content: space-between;
-    column-gap: 40px;
-    border-bottom: 1px solid rgb(127, 122, 122);
-    padding-bottom: 40px;
+    align-items: center;
+    background-color: #2AA7FF;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    min-height: 40px;
+    color: #FFFFFF;
 }
 
-.left
-{
+.footer {
+    height: 598px;
+    width: 100%;
+    background: linear-gradient(81deg, #E7F0FF 9.01%, rgba(232, 241, 255, 0.47) 89.11%);
+}
+.section{
+    overflow: hidden;
+    height: 100%;
+}
+.hero_inner {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
-
-.social
-{
-    display: flex;
-    column-gap: 10px;
-}
-
-.copyright
-{
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-.footergroup
-{
+.downloadApp {
+    height: 100%;
     width: 50%;
     display: flex;
-    column-gap: 40px;
-    row-gap: 10px;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 1.5%;margin-top: 3%;
 }
 
-@media screen and (max-width:980px) 
-{
-    .footer
-    {
-        padding: 5vw;
-    }
-
-    .footergroup
-    {
-        flex-wrap: wrap;
-    }    
+.span1 {
+    font-family: Poppins;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 67px;
+    text-align: left;
 }
 
-@media screen and (max-width:464px) 
-{
-    .footer
-    {
-        padding: 50px;
-    }
+.span2 {
+    font-family: Poppins;
+    margin: 10px 0;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 67px;
+    text-align: left;
+    color: #2aa7ff
+}
 
-    .upperfooter
-    {
-        flex-direction: column;
-        row-gap: 40px;
-    }    
+.mobileImgs {
+    position: relative;
+    width: 42%;
+    height: 427px;
+}
 
-    .left
-    {
-        row-gap: 20px;
-    }
+.mobile {
+    position: relative;
+    top: 41px;
+    left: 325px;
+    width: 302px;
+    height: 427px;
+    border-radius: 10px;
+    z-index: 1;
+}
 
-    .footergroup
-    {
-        column-gap: 0;
-    }
+.mobile1 {
+    position: absolute;
+    width: 302px;
+    top: 111px;
+    height: 503px;
+    left: 125px;
 }
