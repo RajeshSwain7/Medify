@@ -1,85 +1,116 @@
-import React from 'react'
-import style from './Footer.module.css'
-import styles from './About.module.css'
-import Section from '../Section/Section'
-import Icon, { IconName } from '../Icon/Icons'
-import Form, { Formtype } from '../Form/Form'
-import Logo from '../Logo/Logo'
+import { useTheme } from "@emotion/react";
+import { Container } from "@mui/material";
+import Grid from '@mui/material/Grid';
+import medifyLogo from "../../assets/medify_logo.svg"
+import { Typography } from "@mui/material";
+import SocialMediaIcon from "./SocialMediaIcon";
+import facebook from "../../assets/SocialMediaIcons/facebook.svg"
+import pinterest from "../../assets/SocialMediaIcons/pinterest.svg"
+import twitter from "../../assets/SocialMediaIcons/twitter.svg"
+import youtube from "../../assets/SocialMediaIcons/youtube.svg"
+import Divider from '@mui/material/Divider';
+import DropDownItem from "./DropDownItem";
+import Box from "@mui/material/Box";
 
-export default function
-    Footer
-    () {
-    return (
-        <div className={style.footer}>
-            <Section>
-                <div className={style.section}>
-                    <div className={style.hero_inner}>
-                        <div className={style.mobileImgs}>
-                            <div className={style.mobile}>
-                                <Icon Iconname={IconName.Footer.Mobile} className={style.PCIcon} /></div>
-                            <div className={style.mobile1}>
-                                <Icon Iconname={IconName.Footer.Mobile} className={style.PCIcon} /></div>
+const links1 = [
+    {
+        name: "About Us"
+    },
+    {
+        name: "Our Pricing"
+    },
+    {
+        name: "Our Gallary"
+    },
+    {
+        name: "Appointment"
+    },
+    {
+        name: "Privacy Policy"
+    }
+]
+const links2 = [
+    {
+        name: "Orthology"
+    },
+    {
+        name: "Neurology"
+    },
+    {
+        name: "Dental Care"
+    },
+    {
+        name: "Opthalmology"
+    },
+    {
+        name: "Cardiology"
+    }
+]
+
+const Footer = () => {
+    const theme = useTheme();
+    return <div style={{ backgroundColor: theme.palette.secondary.main, padding: "3rem 0rem 2rem 0rem", position:'relative', bottom:'0px', zIndex:1}}>
+        <Container maxWidth="lg">
+            <Grid container spacing={2}>
+                <Grid item xs={12} sm={12} md={12} lg={4} sx={{marginBottom:{xs:'2rem', lg:0}}}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: { lg: 'flex-start', md: 'center', sm: 'center', xs: 'center' }, gap:{md: 12, xs:6} }}>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <img src={medifyLogo} style={{ height: '30px' }} alt="Logo" />
+                            <Typography
+                                noWrap
+                                component="a"
+                                sx={{
+                                    mr: 2,
+                                    fontWeight: 700,
+                                    color: theme.palette.primary.main,
+                                    textDecoration: "none",
+                                    marginLeft: '5px',
+                                    fontSize: '24px',
+                                }}
+                            >
+                                Medify
+                            </Typography>
                         </div>
-
-                        <div className={style.downloadApp}>
-                            <Icon Iconname={IconName.Footer.Arrow} className={style.PCIcon} />
-                            <div className={style.heroTxtGP}>
-                                <p>
-                                    <span className={style.span1}>
-                                        Download the
-                                        <span className={style.span2}><br /> Medify </span> App
-                                    </span>
-                                </p>
-                                <div className={style.pc}>
-                                    <Form type={Formtype.GetApp}></Form>
-                                </div>
-                            </div>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', gap: 20 }}>
+                            <SocialMediaIcon icon={facebook} />
+                            <SocialMediaIcon icon={twitter} />
+                            <SocialMediaIcon icon={youtube} />
+                            <SocialMediaIcon icon={pinterest} />
                         </div>
-                    </div>
-                </div>
-            </Section >
-            {/* <Section> */}
-                <div className={styles.about}>
-                    <div className={styles.flex}>
-
-                        <div className={styles.icons}>
-                             <Logo/>
-                            <div className={styles.flex}>
-                                <Icon Iconname={IconName.Footer.FaceBook} className={style.Logo} />
-                                <Icon Iconname={IconName.Footer.YT} className={style.Logo} />
-                                <Icon Iconname={IconName.Footer.X} className={style.Logo} />
-                                <Icon Iconname={IconName.Footer.PT} className={style.Logo} />
-                            </div>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} lg={8}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', gap: 0, flexDirection: { lg: 'row', md: 'row', sm: 'column', xs: 'column' } }}>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'column', gap: 8 }}>
+                            {
+                                links1 && links1.map((d, idx) =>
+                                    <DropDownItem key={idx} name={d.name} />
+                                )
+                            }
                         </div>
-
-                        <div className={styles.linksG}>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>About Us</p>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>Our Pricing</p>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>Our Gallery</p>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>Appointment</p>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>Privacy Policy</p>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'column', gap: 8 }}>
+                            {
+                                links2 && links2.map((d, idx) =>
+                                    <DropDownItem key={idx} name={d.name} />
+                                )
+                            }
                         </div>
-
-                        <div className={styles.linksG}>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>About Us</p>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>Our Pricing</p>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>Our Gallery</p>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>Appointment</p>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>Privacy Policy</p>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'column', gap: 8 }}>
+                            {
+                                links1 && links1.map((d, idx) =>
+                                    <DropDownItem key={idx} name={d.name} />
+                                )
+                            }
                         </div>
-
-                        <div className={styles.linksG}>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>About Us</p>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>Our Pricing</p>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>Our Gallery</p>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>Appointment</p>
-                            <p className={styles.links}><Icon Iconname={IconName.Footer.Gt}></Icon>Privacy Policy</p>
-                        </div>
-
-                    </div>
-                    <p className={styles.para}>Copyright ©2023 Surya Nursing Home.com. All Rights Reserved</p>
-                </div>
-            {/* </Section>   */}
-        </div >
-    )
+                    </Box>
+                </Grid>
+            </Grid>
+            <Divider style={{ backgroundColor: '#315081', margin: "4rem 0rem 2rem 0rem" }} orientation="horizontal" variant="middle" flexItem />
+            <Typography sx={{ textAlign: { xs: 'center', sm: 'center' }, color: "white", fontSize: '16px', fontWeight: 400, lineHeight: "28px" }}>
+                Copyright ©2023 Surya Nursing Home.com. All Rights Reserved
+            </Typography>
+        </Container>
+    </div>
 }
+
+export default Footer;
