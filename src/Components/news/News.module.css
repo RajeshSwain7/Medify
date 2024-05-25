@@ -1,0 +1,51 @@
+.newscontainer
+{
+    display: flex;
+    justify-content: center;
+}
+
+.news
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.news>p
+{
+    font-size: 16px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.news>h1
+{
+    margin-top: 10px;
+    font-size: 48px;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.newscards
+{
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 40px;
+}
+
+@media screen and (max-width:1180px)
+{
+    .newscontainer
+    {
+        flex-direction: column;
+    }
+
+    .newscards
+    {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+}

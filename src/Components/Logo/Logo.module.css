@@ -1,11 +1,6 @@
-.logo {
-    /* display: flex; */
-    height: 27px;
+.logo
+{
     width: 92px;
-}
-
-.logoImg {
-    height: 100%;
-    width: 100%;
+    height: 27px;
     cursor: pointer;
 }

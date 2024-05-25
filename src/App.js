@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+import Homepage from './pages/homepage/Homepage';
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from './Pages/Home/HomePage';
-import MainPage from './Pages/MainPage';
-import MyBooking from './Pages/MyBooking/MyBooking';
-import SearchResult from './Pages/SearchResult/SearchResult';
+import Headline from './components/headline/Headline';
+import Navbar from './components/navbar/Navbar';
+import {BrowserRouter as Router, Routes, Route, Outlet} from 'react-router-dom'
+import FindDoc from './pages/finddoc/FIndDoc';
+import Footer from './components/footer/Footer';
+import MyBookings from './pages/bookings/MyBookings';
+import { SnackbarProvider } from 'notistack'
+import Contact from './components/contact/Contact';
+
+function Medify()
+{
+  return(
+    <div>
+      <SnackbarProvider anchorOrigin={{ horizontal: 'center', vertical: 'top' }}>
+        <Headline/>
+        <Navbar/>
+        <Outlet/>
+        <Contact/>
+        <Footer/>
+      </SnackbarProvider>
+    </div>
+  )
+}
 
 function App() {
   return (
-    <BrowserRouter>
+    <div className="App">
+      <Router>
       <Routes>
-        <Route path="/" element={<MainPage />}>
-          <Route index element={<HomePage />} />
-          <Route path="SearchResult" element={<SearchResult />} />
-          <Route path="MyBooking" element={<MyBooking />} />
-          <Route path="Home" element={<HomePage />} />
+        <Route path='/' element={<Medify/>}>
+          <Route path='' element={<Homepage/>}/>
+          <Route path='doctors' element={<FindDoc/>}/>
+          <Route path='mybookings' element={<MyBookings/>}/>
         </Route>
       </Routes>
-    </BrowserRouter>
+      </Router>
+    </div>
   );
 }
 
